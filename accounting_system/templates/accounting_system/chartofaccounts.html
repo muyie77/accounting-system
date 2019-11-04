@@ -1,0 +1,28 @@
+{% extends 'accounting_system/base.html' %}
+
+{% block title %}Chart Of Accounts{% endblock %}
+
+{% block content %}
+  <div class="container-fluid title text-center">
+    <h1 class="mt-4">CHART OF ACCOUNTS</h1>
+  </div>
+
+  <table class="table table-bordered table-dark table-striped">
+    {% for item in rows %}
+      <thead class="thead-light">
+        <th scope="col" colspan="2">{{ item.0 }}</th>
+      </thead>
+      <tbody>
+        {% for rows in item|slice:'1:' %}
+          {% if rows.0 != None and rows.1 != None  %}
+            <tr>
+              <th scope="row">{{ rows.0 }}</th>
+              <td>{{ rows.1 }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </tbody>
+    {% endfor %}
+  </table>
+
+{% endblock %}

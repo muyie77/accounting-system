@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" media="all" href="{% static 'styles.css' %}">
+	<link rel="stylesheet" type="text/css" media="all" href="{% static 'animation.css' %}">
+	<link rel="stylesheet" type="text/css" media="all" href="{% static 'login-signup.css' %}">
+	<link rel="stylesheet" type="text/css" media="all" href="{% static 'icons.css' %}">
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<div class="container">
+		<div class="ani">
+			<div class="a1"><span><b></b></span></div>
+			<div class="a2"><span><b></b></span></div>
+			<div class="a3"><span><b></b></span></div>
+			<div class="a4"><span><b></b></span></div>
+			<div class="a5"><span><b></b></span></div>
+			<div class="a6"><span><b></b></span></div>
+			<div class="a7"><span><b></b></span></div>
+			<div class="a8"><span><b></b></span></div>
+			<div class="a9"><span><b></b></span></div>
+			<div class="a10"><span><b></b></span></div>
+		</div>
+
+
+		{% block content %}{% endblock %}
+
+		<footer role="contentinfo">
+			<div>
+				<nav id="menu">
+					<ul role="navigation" class="nav">
+						<li><a href="{% url 'accounting_system:index' %}" class="nav-home"><strong>Accounting System</strong></a></li>
+					</ul>
+				</nav>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

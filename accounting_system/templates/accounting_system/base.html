@@ -1,0 +1,84 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+
+  <link rel="stylesheet" href="{% static 'accounting_system/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'accounting_system/css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'accounting_system/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'accounting_system/css/tether.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'accounting_system/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'accounting_system/css/master.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="wrapper">
+   <div class="overlay"></div>
+
+        <!-- Sidebar -->
+    <nav class="navbar navbar-inverse fixed-top" id="sidebar-wrapper" role="navigation">
+     <ul class="nav sidebar-nav">
+       <div class="sidebar-header">
+         <div class="sidebar-brand">
+           <a href="#">Name of the Shop</a>
+         </div>
+       </div>
+       <li><a id="home" href="{% url 'accounting_system:index' %}">Home</a></li>
+       <li><a id="chart-of-accounts" href="{% url 'accounting_system:chart_of_accounts' %}">Chart Of Accounts</a></li>
+       <li><a id="general-journal" href="#">General Journal</a></li>
+       <li><a id="general-ledger" href="#">General Ledger</a></li>
+       <li><a id="trial-balance" href="#">Trial Balance</a></li>
+       <li><a id="income-statement" href="#">Income Statement</a></li>
+       <li><a id="financial-position" href="#">Financial Position</a></li>
+
+
+<!--
+       <li class="dropdown">
+         <a href="#works" class="dropdown-toggle"  data-toggle="dropdown">Works <span class="caret"></span></a>
+         <ul class="dropdown-menu animated fadeInLeft" role="menu">
+            <div class="dropdown-header">Dropdown heading</div>
+            <li><a href="#pictures">Pictures</a></li>
+            <li><a href="#videos">Videeos</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#art">Art</a></li>
+            <li><a href="#awards">Awards</a></li>
+          </ul>
+        </li>
+-->
+
+
+
+      </ul>
+      <button id="logout" class="btn btn-outline-danger btn-block position-absolute" ><a href="{% url 'logout' %}"><strong>Log Out</strong></a></button>
+    </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			      <span class="hamb-middle"></span>
+				        <span class="hamb-bottom"></span>
+            </button>
+            <div class="container">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+<!-- partial -->
+  <script src="{% static 'accounting_system/js/jquery-3.3.1.slim.min.js' %}"></script>
+  <script src="{% static 'accounting_system/js/popper.min.js' %}"></script>
+  <script src="{% static 'accounting_system/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'accounting_system/js/tether.min.js' %}"></script>
+  <script  src="{% static 'accounting_system/js/script.js' %}"></script>
+
+</body>
+</html>
